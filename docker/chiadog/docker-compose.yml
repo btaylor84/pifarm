@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+    chiadog:
+        container_name: chiadog
+        image: chiadog-docker:latest
+        volumes:
+            - ./config:/root/.chiadog
+            - /home/pi/.chia/mainnet/log:/root/.chia/mainnet/log:ro
+        restart: unless-stopped

@@ -1,0 +1,11 @@
+services:
+    chiafarm:
+        container_name: chiafarm
+        image: chia:latest
+        volumes:
+            - /plots:/plots
+            - /home/pi/.chia/mainnet/db:/root/.chia/mainnet/db
+            - /home/pi/.chia/mainnet/log:/root/.chia/mainnet/log
+            - /home/pi/.chia/mainnet/wallet/db:/root/.chia/mainnet/wallet/db
+        restart: unless-stopped
+        command: /bin/bash
